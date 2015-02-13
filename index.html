@@ -1,0 +1,163 @@
+<html>
+<head>
+    <title>Cube</title>
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <script type="text/javascript" src="js/spin.js"></script>
+    <script type="text/javascript" src="js/Croll.js"></script>
+    <style type="text/css">		
+		body {
+			background-color: black;
+			color: white;
+			font-family: 'Lucida Grande', Verdana, Arial;
+			font-size: 12px;
+			background-image: -webkit-gradient(radial,50% 500, 1,50% 500, 400,from(rgba(255, 255, 255, 0.3)),to(rgba(255, 255, 255, 0)));
+			background-repeat: no-repeat;
+		
+		}
+
+		#container {
+			width: 100%;
+			height: 700px;
+			-webkit-perspective: 550; /* For compatibility with iPhone 3.0, we leave off the units here */
+			-webkit-perspective-origin: 50% 225px;
+		}
+		#stage {
+			width: 100%;
+			height: 100%;
+			-webkit-transition: -webkit-transform 2s;
+			-webkit-transform-style: preserve-3d;
+		}
+
+		#shape {
+			position: relative;
+			top: 160px;
+			margin: 0 auto;
+			height: 97px;
+			width: 112px;
+			-webkit-transform-style: preserve-3d;
+			-webkit-transform: rotateY(0);
+		}
+
+		.plane {
+			position: absolute;
+			height: 97px;
+			width: 112px;
+			text-align: center;
+			font-family: Times, serif;
+			font-size: 20pt;
+			color: black;
+			-webkit-transition: -webkit-transform 2s, opacity 2s;
+		}
+
+		#shape.backfaces .plane {
+			-webkit-backface-visibility:visible;
+		}
+
+		#shape {
+			/*-webkit-animation: spin 15s infinite linear;*/
+		}
+		
+		.backfaces{
+			height: 80px;
+			width: 80px;
+		}
+
+		@-webkit-keyframes spin {
+			from { -webkit-transform: rotateY(0);}
+			to   { -webkit-transform: rotateY(-360deg);}
+		}
+		
+		@-webkit-keyframes hide {
+			from { -webkit-transform:opacity:1 }
+			to   { -webkit-transform:opacity:0 }
+		}
+
+		.ring > .one {
+			-webkit-transform: translateZ(200px) translateY(120px);
+			background-image:url(img/360-view.png);
+		}
+
+		.ring > .two {
+			-webkit-transform: rotateY(30deg) translateZ(200px) translateY(120px);
+		}
+
+		.ring > .three {
+			-webkit-transform: rotateY(60deg) translateZ(200px) translateY(120px);
+			background-image:url(img/Explore-inside.png);
+		}
+
+		.ring > .four {
+			-webkit-transform: rotateY(90deg) translateZ(200px) translateY(120px);
+		}
+
+		.ring > .five {
+			-webkit-transform: rotateY(120deg) translateZ(200px) translateY(120px);
+			background-image:url(img/Function.png);
+		}
+
+		.ring > .six {
+			-webkit-transform: rotateY(150deg) translateZ(200px) translateY(120px);
+		}
+
+		.ring > .seven {
+			-webkit-transform: rotateY(180deg) translateZ(200px) translateY(120px);
+			background-image:url(img/Magic-glass.png);
+		}
+
+		.ring > .eight {
+			-webkit-transform: rotateY(210deg) translateZ(200px) translateY(120px);
+		}
+
+		.ring > .nine {
+			-webkit-transform: rotateY(-120deg) translateZ(200px) translateY(120px);
+			background-image:url(img/Sellect-color.png);
+		}
+
+		.ring > .ten {
+			-webkit-transform: rotateY(-90deg) translateZ(200px) translateY(120px);
+		  }
+
+		.ring > .eleven {
+			-webkit-transform: rotateY(300deg) translateZ(200px) translateY(120px);
+			background-image:url(img/Explore-inside.png);
+		}
+
+		.ring > .twelve {
+			-webkit-transform: rotateY(330deg) translateZ(200px) translateY(120px);
+		}
+
+		.controls {
+			width: 80%;
+			margin: 0 auto;
+			padding: 5px 20px;
+			-webkit-border-radius: 12px;
+			background-color: rgba(255, 255, 255, 0.5);
+		}
+		.controls > div {
+			margin: 10px;
+		}	  
+	</style>
+</head>
+    <body style="'background-color: transparent; position:absolute; left:0; top:0; -webkit-user-select:none">
+    	<div id="container">
+            <div id="stage">
+              <div id="shape" class="ring backfaces" style="-webkit-transition-duration:0s; -webkit-transition-timing-function:linear">
+                <div id="shape0" class="plane one" ></div>
+                <div class="plane two"></div>
+                <div id="shape1" class="plane three" ></div>
+                <div class="plane four"></div>
+                <div id="shape2" class="plane five" ></div>
+                <div class="plane six"></div>
+                <div id="shape3" class="plane seven" ></div>
+                <div class="plane eight"></div>
+                <div id="shape4" class="plane nine" ></div>
+                <div class="plane ten"></div>
+                <div id="shape5" class="plane eleven"></div>
+                <div class="plane twelve"></div>
+              </div>
+              <div style="position:absolute; width:100px; height:100px; top:10px; left:10px; z-index:10;"></div>
+        </div>
+  </div>
+    </body>
+</html>
